@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Погода</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Погода в {{.Location.Name}}, {{.Location.Country}}</h1>
+    <p>Дата и время: {{.Location.LocalTime}}</p>
+    <p>Температура: {{.Current.Temp_c}} °C</p>
+    <p>Ощущается как: {{.Current.Feelslike_c}} °C</p>
+    <p>Состояние: {{.Current.Condition.Text}} <img src="{{.Current.Condition.Icon}}" alt="{{.Current.Condition.Text}}"></p>
+    <p>Влажность: {{.Current.Humidity}}%</p>
+    <p>Скорость ветра: {{.Current.Wind_kph}} км/ч</p>
+    <p>Направление ветра: {{.Current.Wind_dir}}</p>
+
+<form method="post">
+    <label for="city">Город:</label>
+    <input type="text" id="city" name="city">
+    <button type="submit">Получить погоду</button>
+</form>
+</body>
+</html>
